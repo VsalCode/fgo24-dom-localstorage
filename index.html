@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Storage</title>
+</head>
+<style>
+  *{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+</style>
+<body>
+  <form id="form" action="">
+    <h1>Selamat Datang <span></span>!</h1>
+    <input type="text" name="name">
+    <button type="submit">Submit</button>
+  </form>
+  <script>
+    const form = document.getElementById('form')
+    const sapa = document.querySelector('#form > h1 > span')
+    
+    console.log(sapa);
+    
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault()
+      
+      const input = e.target.name.value
+      // console.log(input);
+
+      window.localStorage.setItem('name', input)
+      const data = window.localStorage.getItem('name')
+
+      // console.log(data);
+      sapa.textContent = data
+    })
+  </script>
+</body>
+</html>
