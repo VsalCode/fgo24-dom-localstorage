@@ -26,10 +26,9 @@
     const form = document.getElementById('form')
     const sapa = document.querySelector('#form > h1 > span')
     
-    console.log(sapa);
-    
+    sapa.textContent = window.localStorage.getItem('name') 
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', (e) => {  
       e.preventDefault()
       
       const input = e.target.name.value
@@ -39,7 +38,9 @@
       const data = window.localStorage.getItem('name')
 
       // console.log(data);
-      sapa.textContent = data
+      sapa.textContent = data 
+
+
     })
   </script>
 </body>
